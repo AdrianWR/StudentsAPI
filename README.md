@@ -1,14 +1,22 @@
-# 42SP_API
+# Students API
+
+## Motivation
+
+I started this project as part of a job interview. I didn't get the position, but as I liked so much to work with REST APIs, I decided to share what I did in this repository, so I hope it helps people facing this kind of situation. Here are some hot takes that I'd like to discuss before moving on to the hot stuff:
+
+1. The first remainder is that I don't think that the option for MongoDB was the best in this case. It was helpful because I learned a lot about NoSQL databses, but regarding the nature of the data, a typical SQL database, such as SQLite, would do a great job regarding this problem.
+2. My test cases could be implemented in a more professional approach, separating unit tests and integration tests. I think that `pytest` is a fantastic tool to address these issues, but a simple test framework would do the job just as great and without so much work.
+3. `Docker Compose` was super useful int this context, as I guarantee that my work could run on any machine. Abetter idea would be to deploy this application with a cloud service, such as Google Cloud Run, for example.
 
 ## Installation
 
-### With Docker Compose (Recommended)
+### With Docker Compose
 
 Running the API server on a container is as simple as inputting `docker-compose up` on your favorite shell. The recommended version of `docker-compose` is 1.25, and you can deploy the application with the following commands. This process may take a while, so  grab a cup of tea and wait for its completion.
 
 ```
-git clone git@github.com:42sp/full-time-selection-process-AdrianWR.git 42sp_api
-cd 42sp_api
+git clone git@github.com:AdrianWR/StudentsAPI.git students_api
+cd studentes_api
 docker-compose up -d
 ```
 
