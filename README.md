@@ -2,7 +2,8 @@
 
 ## Motivation
 
-I started this project as part of a job interview. I didn't get the position, but as I liked so much to work with REST APIs, I decided to share what I did in this repository, so I hope it helps people facing this kind of situation. Here are some hot takes that I'd like to discuss before moving on to the hot stuff:
+I started this project as part of a job interview. I didn't get the position, but as I liked so much to work with REST APIs, I decided to share what I did in this repository, so I hope it helps people facing this kind of situation. The problem was to develop an API to manage the database of students of a tech school, more specifically one school of the 42 network. Here are some hot takes that I'd like to discuss before moving on to the hot stuff:
+
 
 1. The first remainder is that I don't think that the option for MongoDB was the best in this case. It was helpful because I learned a lot about NoSQL databses, but regarding the nature of the data, a typical SQL database, such as SQLite, would do a great job regarding this problem.
 2. My test cases could be implemented in a more professional approach, separating unit tests and integration tests. I think that `pytest` is a fantastic tool to address these issues, but a simple test framework would do the job just as great and without so much work.
@@ -16,7 +17,7 @@ Running the API server on a container is as simple as inputting `docker-compose 
 
 ```
 git clone git@github.com:AdrianWR/StudentsAPI.git students_api
-cd studentes_api
+cd students_api
 docker-compose up -d
 ```
 
