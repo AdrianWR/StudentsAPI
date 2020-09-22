@@ -1,0 +1,6 @@
+*~
+*.swp
+*.swo
+*.py[cod]
+*$py.class
+__pycache__

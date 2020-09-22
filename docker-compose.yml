@@ -1,0 +1,36 @@
+version: "3"
+
+services:
+
+  flask:
+    build:
+      context: app
+      dockerfile: Dockerfile
+    container_name: flask
+    restart: unless-stopped
+    image: api/flask-python:3.7
+    environment:
+      APP_ENV: "prod"
+      APP_DEBUG: "False"
+      APP_PORT: 3000
+      MONGODB_DATABASE: api
+      MONGODB_USERNAME: aroque
+      MONGODB_PASSWORD: aroque
+      MONGODB_HOSTNAME: mongodb
+    ports:
+    - "3000:3000"
+
+  mongodb:
+    image: mongo:4.2
+    container_name: mongodb
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 42sp
+      MONGO_INITDB_DATABASE: admin
+    volumes:
+    - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    - mongodbdata:/data/db
+
+volumes:
+    mongodbdata: {}
