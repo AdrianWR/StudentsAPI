@@ -43,6 +43,7 @@ def post(url, dict, expected_value):
     assert response.headers['Content-Type'] == "application/json"
 
 def test_post_students():
+    """Test several PST requests, and assert the HTTP status code"""
     post("http://127.0.0.1:3000/students", gus, 201)
     post("http://127.0.0.1:3000/students", guiga, 201)
     post("http://127.0.0.1:3000/students", aroque, 201)

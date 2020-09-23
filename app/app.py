@@ -104,12 +104,14 @@ def delete_student(id):
 
 @application.errorhandler(InvalidUsage)
 def handle_invalid_usage(error):
+    """Handle custom errors on API requests"""
     response = jsonify(error.to_dict())
     response.status_code = error.status_code
     return response, response.status_code
 
 @application.errorhandler(HTTPException)
 def handle_exception(e):
+    """Handle HTTP calssical errors on API requests"""
     return jsonify({"message": e.name}), e.code
 
 

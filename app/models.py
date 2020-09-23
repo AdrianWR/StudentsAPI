@@ -39,6 +39,7 @@ class Student():
 
     @staticmethod
     def __intraid_exists(intra_id, db):
+        """Check if 'intra_id' element is not repeated"""
         query = db.students.find_one({"intra_id": intra_id})
         if query:
             return True
@@ -46,6 +47,7 @@ class Student():
 
     @staticmethod
     def __auto_increment(field, collection):
+        """Increase record id in NoSQL database"""
         doc = collection.find_one_and_update(
             {'_id' : field},
             {'$inc': {'sequence_value': 1}})

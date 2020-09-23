@@ -2,6 +2,7 @@ import requests
 
 
 def delete(id, expected_value):
+    """Helper function to teste DELETE HTTP requests"""
     response = requests.delete(f"http://127.0.0.1:3000/students/{id}")
     print(response.request.body)
     print(response.request.headers)
