@@ -76,3 +76,11 @@ It's possible to delete a student data with the `DELETE` HTTP method. To delete,
 ```
 $ curl -X DELETE http://localhost:3000/students/2
 ```
+
+## Testing
+
+The tests must be executed after the deployment of the application with `docker-compose`. To run a battery of tests, just run the following command at the project root directory.
+
+```
+pytest
+```
